@@ -1,8 +1,6 @@
-folium==0.11.0
-matplotlib
-pandas
-pymongo
-streamlit
-streamlit-folium
-
-
+pandas==1.0.1
+numpy==1.18.1
+streamlit_folium==0.0.1
+pymongo==3.10.1
+folium==0.5.0
+streamlit==0.64.0
