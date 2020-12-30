@@ -35,7 +35,7 @@ if dashboard_selectbox=="Mapping of Telecom Infrastructure" :
         st.success("You selected a Telecom INfrastructure")
         
         if infra_selected=='Wifi':
-            df1=pd.read_csv("C:\\Users\\hp\Desktop\\wifi_gen.csv")
+            df1=pd.read_csv("https://raw.githubusercontent.com//Rohan-Rokade//Mapping-_Telecom-//main//wifi_gen.csv?token=AP3QDC452QPZL4VQHX7GQJC75RDOW")
             st.table(df1)
             
             m98= folium.Map(location=[np.average(df1['lat']),np.average(df1['lon'])],tiles='OpenStreetMap',zoom_start=6)
