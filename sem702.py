@@ -35,23 +35,7 @@ if dashboard_selectbox=="Mapping of Telecom Infrastructure" :
             st.table(df1)
            
             
-        elif  infra_selected=='Towers':
-            DATABASE = "mongodb+srv://amaan:PwxIIvIMb2tTow3z@cluster0-myavd.mongodb.net/natours?retryWrites=true&w=majority"
-            @st.cache
-            def load_data():
-                    client = pymongo.MongoClient(DATABASE)
-            
-                    db = client["natours"]
-                    towers= db["towers"].find().limit(100)
-            
-                    data = [userRecord for userRecord in towers ] 
-                    df1= pd.DataFrame(data)
-                    df1.reset_index(drop=True, inplace=True)
-                    df1.drop(['_id'], axis=1,inplace=True)
-                    return df1
-            
-            data2=load_data()
-            st.table(data2.head())
+        e
             
     else:
         st.warning("No Telecom Infrastructure Selected")
