@@ -42,7 +42,7 @@ if dashboard_selectbox=="Mapping of Telecom Infrastructure" :
             
             for idx, row in df1.iterrows():
                  folium.Marker(location=[row['lat'], row['lon']],popup=("Network service Provider: {nsp1}<br>"
-             "Number of Connected Users: {ncp1}<br>").format(nsp1=row.nsp,ncp1=row.ncu),icon=folium.Icon(icon='cloud',color='green')).add_to(m98)
+             "Number of Connected Users: {ncp1}<br>").format(nsp1=row.nsp,ncp1=row.ncu)).add_to(m98)
             folium_static(m98)
             
             
@@ -57,7 +57,6 @@ if dashboard_selectbox=="Mapping of Telecom Infrastructure" :
                  mc.add_child(Marker(location=[row['lat'], row['lon']],
             popup=("Hospital Name: {xyz1}<br>""Opening time of Hospital: {open1}<br>" "Closing time of Hospital: {close1}<br>" "Contact Number :{contact1}<br>")
             .format(xyz1=row.host,open1=row.open,close1=row.closed,contact1=row.contact)
-                    ,icon=folium.Icon(icon='info-sign')
                     ))
             m99.add_child(mc)
             
@@ -78,7 +77,6 @@ if dashboard_selectbox=="Mapping of Telecom Infrastructure" :
                  mc.add_child(Marker(location=[row['lat'], row['lon']],
             popup=("Hospital Name: {xyz1}<br>""Opening time of Hospital: {open1}<br>" "Closing time of Hospital: {close1}<br>" "Contact Number :{contact1}<br>")
             .format(xyz1=row.host,open1=row.open,close1=row.closed,contact1=row.contact)
-                    ,icon=folium.Icon(icon='info-sign')
                     ))
             m96.add_child(mc) 
             folium_static(m96)
@@ -95,8 +93,7 @@ if dashboard_selectbox=="Mapping of Telecom Infrastructure" :
                      mc.add_child(Marker(location=[row['lat'], row['lon']],
                 popup=("Hospital Name: {xyz1}<br>""Opening time of Hospital: {open1}<br>" "Closing time of Hospital: {close1}<br>" "Contact Number :{contact1}<br>")
                 .format(xyz1=row.host,open1=row.open,close1=row.closed,contact1=row.contact)
-                        ,icon=folium.Icon(icon='info-sign')
-                        ))
+                  ))
                 m95.add_child(mc) 
                 folium_static(m95)
             
@@ -129,7 +126,7 @@ if dashboard_selectbox=="Mapping of Telecom Infrastructure" :
             for idx, row in data2.iterrows():
                  mc.add_child(Marker(location=[row['lat'], row['lon']],
                                      popup=("Range: {range1}<br>"
-             "Radio Type: {radio1}<br>").format(range1=row.range,radio1=row.radio),icon=folium.Icon(icon='info-sign')))
+             "Radio Type: {radio1}<br>").format(range1=row.range,radio1=row.radio) ))
             m_3.add_child(mc)
             
             folium_static(m_3)
