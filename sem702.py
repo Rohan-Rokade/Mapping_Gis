@@ -4,7 +4,7 @@ Created on Tue Dec 29 17:54:31 2020
 
 @author: hp
 """
-#asdfghjkl;sdfghjklasdfghjk
+
 
 import streamlit as st
 import pandas as pd
@@ -35,19 +35,19 @@ if dashboard_selectbox=="Mapping of Telecom Infrastructure" :
         st.success("You selected a Telecom INfrastructure")
         
         if infra_selected=='Wifi':
-            df1=pd.read_csv("https://raw.githubusercontent.com//Rohan-Rokade//Mapping-_Telecom-//main//wifi_gen.csv")
+            df1=pd.read_csv("C:\\Users\\hp\Desktop\\wifi_gen.csv")
             st.table(df1)
             
             m98= folium.Map(location=[np.average(df1['lat']),np.average(df1['lon'])],tiles='OpenStreetMap',zoom_start=6)
             
             for idx, row in df1.iterrows():
                  folium.Marker(location=[row['lat'], row['lon']],popup=("Network service Provider: {nsp1}<br>"
-             "Number of Connected Users: {ncp1}<br>").format(nsp1=row.nsp,ncp1=row.ncu)).add_to(m98)
+             "Number of Connected Users: {ncp1}<br>").format(nsp1=row.nsp,ncp1=row.ncu),icon=folium.Icon(icon='cloud',color='green')).add_to(m98)
             folium_static(m98)
             
             
         elif infra_selected=='Hospital':
-            df1=pd.read_csv("https://raw.githubusercontent.com//Rohan-Rokade//Mapping-_Telecom-//main//hos_gen.csv")
+            df1=pd.read_csv("C:\\Users\\hp\Desktop\\hos_gen.csv")
             st.table(df1)
             
             m99= folium.Map(location=[np.average(df1['lat']),np.average(df1['lon'])], tiles='cartodbpositron', zoom_start=4)
@@ -57,6 +57,7 @@ if dashboard_selectbox=="Mapping of Telecom Infrastructure" :
                  mc.add_child(Marker(location=[row['lat'], row['lon']],
             popup=("Hospital Name: {xyz1}<br>""Opening time of Hospital: {open1}<br>" "Closing time of Hospital: {close1}<br>" "Contact Number :{contact1}<br>")
             .format(xyz1=row.host,open1=row.open,close1=row.closed,contact1=row.contact)
+                    ,icon=folium.Icon(icon='info-sign')
                     ))
             m99.add_child(mc)
             
@@ -77,6 +78,7 @@ if dashboard_selectbox=="Mapping of Telecom Infrastructure" :
                  mc.add_child(Marker(location=[row['lat'], row['lon']],
             popup=("Hospital Name: {xyz1}<br>""Opening time of Hospital: {open1}<br>" "Closing time of Hospital: {close1}<br>" "Contact Number :{contact1}<br>")
             .format(xyz1=row.host,open1=row.open,close1=row.closed,contact1=row.contact)
+                    ,icon=folium.Icon(icon='info-sign')
                     ))
             m96.add_child(mc) 
             folium_static(m96)
@@ -93,7 +95,8 @@ if dashboard_selectbox=="Mapping of Telecom Infrastructure" :
                      mc.add_child(Marker(location=[row['lat'], row['lon']],
                 popup=("Hospital Name: {xyz1}<br>""Opening time of Hospital: {open1}<br>" "Closing time of Hospital: {close1}<br>" "Contact Number :{contact1}<br>")
                 .format(xyz1=row.host,open1=row.open,close1=row.closed,contact1=row.contact)
-                  ))
+                        ,icon=folium.Icon(icon='info-sign')
+                        ))
                 m95.add_child(mc) 
                 folium_static(m95)
             
@@ -126,7 +129,7 @@ if dashboard_selectbox=="Mapping of Telecom Infrastructure" :
             for idx, row in data2.iterrows():
                  mc.add_child(Marker(location=[row['lat'], row['lon']],
                                      popup=("Range: {range1}<br>"
-             "Radio Type: {radio1}<br>").format(range1=row.range,radio1=row.radio) ))
+             "Radio Type: {radio1}<br>").format(range1=row.range,radio1=row.radio),icon=folium.Icon(icon='info-sign')))
             m_3.add_child(mc)
             
             folium_static(m_3)
