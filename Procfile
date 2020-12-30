@@ -1,1 +1,1 @@
-web: sh setup.sh && streamlit run rokade.py
+web: sh setup.sh && streamlit run sem702.py
