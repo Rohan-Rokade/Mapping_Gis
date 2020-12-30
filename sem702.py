@@ -24,7 +24,7 @@ if dashboard_selectbox=="Mapping of Telecom Infrastructure" :
    
         st.success("You selected a Telecom INfrastructure")
         
-        if infra_selected=='Wifi':
+        
             df1=pd.read_csv("https://raw.githubusercontent.com//Rohan-Rokade//Mapping-_Telecom-//main//wifi_gen.csv")
             st.table(df1)
            
