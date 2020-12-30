@@ -21,21 +21,12 @@ if dashboard_selectbox=="Home":
     
 if dashboard_selectbox=="Mapping of Telecom Infrastructure" :
     
-    emp_arr=['']
-    infra_arr=['Wifi','Hospital','Towers']
-    infra_list=np.append(emp_arr,infra_arr)
-    
-    infra_selected = st.selectbox('Select one Telecom Infrastructure:',infra_list, format_func=lambda u: 'Select an option' if u == '' else u,key="Infra list")
-    
-    if infra_selected:
+   
         st.success("You selected a Telecom INfrastructure")
         
         if infra_selected=='Wifi':
-            df1=pd.read_csv("C:\\Users\\hp\Desktop\\wifi_gen.csv")
+            df1=pd.read_csv("https://raw.githubusercontent.com//Rohan-Rokade//Mapping-_Telecom-//main//wifi_gen.csv")
             st.table(df1)
            
             
-        e
-            
-    else:
-        st.warning("No Telecom Infrastructure Selected")
+    
