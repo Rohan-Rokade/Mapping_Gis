@@ -13,7 +13,7 @@ import pymongo
 import folium
 from folium import  Marker
 from folium.plugins import  MarkerCluster
-from streamlit_folium import foliumh_static
+from streamlit_folium import folium_static
 
 
 dashboard_selectbox = st.sidebar.selectbox(
