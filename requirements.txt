@@ -10,9 +10,8 @@ folium==0.11.0
 matplotlib==3.2.2
 
 
-pandas==1.0.1
-pandas-profiling==2.8.0
-pandocfilters==1.4.2
+pandas
+
 
 
 
@@ -22,5 +21,5 @@ pymongo==3.10.1
 
 streamlit==0.64.0
 streamlit-folium==0.0.1
-streamlit-pandas-profiling==0.0.4
+
 
