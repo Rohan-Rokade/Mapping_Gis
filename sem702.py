@@ -63,42 +63,7 @@ if dashboard_selectbox=="Mapping of Telecom Infrastructure" :
             
             folium_static(m99)
             
-            #time fix 
-            hr_input=st.slider('Slide Hours', min_value=0, max_value=24)
-            df1['op_hr']=df1['open'].str[:2]
-            df1['op_hr']=df1['op_hr'].astype(int)
-          
-         
-            data8=df1[(df1.op_hr==hr_input)]
-            st.write(data8)
             
-            m96= folium.Map(location=[np.average(df1['lat']),np.average(df1['lon'])], tiles='cartodbpositron', zoom_start=4)
-            mc = MarkerCluster()
-            for idx, row in data8.iterrows():
-                 mc.add_child(Marker(location=[row['lat'], row['lon']],
-            popup=("Hospital Name: {xyz1}<br>""Opening time of Hospital: {open1}<br>" "Closing time of Hospital: {close1}<br>" "Contact Number :{contact1}<br>")
-            .format(xyz1=row.host,open1=row.open,close1=row.closed,contact1=row.contact)
-                    ,icon=folium.Icon(icon='info-sign')
-                    ))
-            m96.add_child(mc) 
-            folium_static(m96)
-            
-            pt_input=st.text_input("Enter the name or substring of Hospital name you want to find","enter here")
-            
-            
-            if(pt_input!= "enter here"):
-                data9=df1[df1.host.str.contains(pt_input)]
-                st.write(data9)
-                m95= folium.Map(location=[np.average(df1['lat']),np.average(df1['lon'])], tiles='cartodbpositron', zoom_start=4)
-                mc = MarkerCluster()
-                for idx, row in data9.iterrows():
-                     mc.add_child(Marker(location=[row['lat'], row['lon']],
-                popup=("Hospital Name: {xyz1}<br>""Opening time of Hospital: {open1}<br>" "Closing time of Hospital: {close1}<br>" "Contact Number :{contact1}<br>")
-                .format(xyz1=row.host,open1=row.open,close1=row.closed,contact1=row.contact)
-                        ,icon=folium.Icon(icon='info-sign')
-                        ))
-                m95.add_child(mc) 
-                folium_static(m95)
             
             
             
