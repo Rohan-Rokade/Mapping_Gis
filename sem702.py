@@ -47,7 +47,7 @@ if dashboard_selectbox=="Mapping of Telecom Infrastructure" :
             
             
         elif infra_selected=='Hospital':
-            df1=pd.read_csv("C:\\Users\\hp\Desktop\\hos_gen.csv")
+            df1=pd.read_csv("https://raw.githubusercontent.com//Rohan-Rokade//Mapping-_Telecom-//main//hos_gen.csv")
             st.table(df1)
             
             m99= folium.Map(location=[np.average(df1['lat']),np.average(df1['lon'])], tiles='cartodbpositron', zoom_start=4)
